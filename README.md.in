@@ -1,4 +1,4 @@
-### xlaclient-rs
+## xlaclient-rs
 
 In reinforcement learning (RL), one often designs a *policy network* 
 for an *agent*, which outputs a probability distribution over the actions the 
@@ -44,12 +44,12 @@ $$ \mathbf{D}(Q\,\|\,P) =
 this experiment gives us $N\times |p_0|$ data point with which we can improve
 $W$ with SGD.
 
-Doing this simuation and then SGD training and simulation with improved network
-and so on alternately gives us a powerful way to discover extremely competetive
+Doing this simulation and then SGD training and simulation with improved network
+and so on alternately gives us a powerful way to discover extremely competitive
 strategies.
 
 ### Why an XLA client in Rust
-In a certain sense in RL we develop a better understaing about the world
+In a certain sense in RL we develop a better understanding about the world
 by making many simulations with a more competent agent gradually. This results
 in a self-reinforcing cycle, which leads to the name RL.
 Making many
@@ -69,8 +69,8 @@ network inference to powerful accelerators such as Google Cloud GPUs or TPUs.
 
 **Note:** DeepMind's `open_spiel` is a RL platform, and thus needs to solve the
 same fast inference problem I outlined. They solve this by bringing up a full
-Tensorflow session and running the XLA compilation through the `@tf.function`
+TensorFlow session and running the XLA compilation through the `@tf.function`
 mechanism. For the purposes of this project, that route is not ideal as 
-Tensorflow session is a ginormous dependency that would require a build
+TensorFlow session is a ginormous dependency that would require a build
 cluster; further `@tf.function` interface currently does not seem to expose all
 the compilation options XLA provides.
